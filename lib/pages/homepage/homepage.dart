@@ -23,7 +23,7 @@ class _HomepageState extends State<Homepage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text("Call Room", style: h4WhiteBold),
-            Text("10 member", style: h6White)
+            Text("10 members", style: h6White)
           ],
         ),
         actions: [
