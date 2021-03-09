@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:interviewVoiceApp/pages/homepage/homepage.dart';
 import 'package:interviewVoiceApp/properties/colors.dart';
 import 'package:interviewVoiceApp/properties/images.dart';
 import 'package:interviewVoiceApp/properties/styles.dart';
@@ -31,33 +32,42 @@ class _UploadProfilePictureState extends State<UploadProfilePicture> {
                 Text("Upload profile picture", style: h3Black),
                 SizedBox(height: 60),
                 Center(
-                  child: ClipOval(
-                    child: Container(
-                      height: 160,
-                      width: 160,
-                      color: BLACK,
-                      child: Image.asset(
-                        BLANKIMAGE,
-                        height: 160,
-                        width: 160,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 10),
-                Center(
-                  child: ButtonTheme(
-                    shape: Border.all(color: BLACK),
-                    child: RaisedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => ImageCapture(),
+                  child: Container(
+                    height: 160,
+                    width: 160,
+                    child: Stack(
+                      children: [
+                        ClipOval(
+                          child: imagePath == null
+                              ? Image.asset(
+                                  BLANKIMAGE,
+                                  height: 160,
+                                  width: 160,
+                                )
+                              : Image.file(
+                                  imagePath,
+                                  height: 160,
+                                  width: 160,
+                                ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: CircleAvatar(
+                            backgroundColor: BLUE,
+                            child: IconButton(
+                              color: WHITE,
+                              icon: Icon(Icons.upload_rounded),
+                              onPressed: () async {
+                                imagePath = await Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => ImageCapture(),
+                                  ),
+                                );
+                              },
+                            ),
                           ),
-                        );
-                      },
-                      color: WHITE,
-                      child: Text("Upload", style: h4Button),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -70,9 +80,9 @@ class _UploadProfilePictureState extends State<UploadProfilePicture> {
                   ),
                   child: FlatButton(
                     onPressed: () {
-                      // Navigator.of(context).push(
-                      //   MaterialPageRoute(builder: (context) => Register2()),
-                      // );
+                      Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (context) => Homepage()),
+                          (Route<dynamic> route) => false);
                     },
                     color: BLUE,
                     textColor: WHITE,

@@ -74,7 +74,9 @@ class _ImageCaptureState extends State<ImageCapture> {
     setState(() => _imageFile = null);
   }
 
-  Future<void> _done(BuildContext context) async {}
+  Future<void> _done(BuildContext context) async {
+    Navigator.pop(context, _imageFile);
+  }
 
   @override
   void initState() {

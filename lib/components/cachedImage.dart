@@ -32,7 +32,7 @@ Widget cachedImage({
           width: 30,
           height: 30,
           child: CircularProgressIndicator(
-            valueColor: new AlwaysStoppedAnimation<Color>(WHITE),
+            valueColor: new AlwaysStoppedAnimation<Color>(BLACK),
             value: progress.progress,
           ),
         ),
