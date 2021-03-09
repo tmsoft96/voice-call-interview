@@ -3,8 +3,7 @@ import 'package:interviewVoiceApp/properties/colors.dart';
 import 'package:interviewVoiceApp/properties/strings.dart';
 import 'package:interviewVoiceApp/properties/styles.dart';
 
-import 'homepage/homepage.dart';
-
+import 'onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -22,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(Duration(seconds: 3), () async {
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => Homepage()),
+          MaterialPageRoute(builder: (context) => Onboarding()),
           (Route<dynamic> route) => false);
     });
   }
@@ -36,12 +35,12 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.call,
-              color: WHITE,
-              size: 150,
+              Icons.ac_unit,
+              color: BLACK,
+              size: 100,
             ),
             SizedBox(height: 10),
-            Text("$TITLE", style: h3White),
+            Text("$TITLE", style: h3Black),
           ],
         ),
       ),

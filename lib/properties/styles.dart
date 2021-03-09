@@ -26,14 +26,22 @@ const TextStyle h6White = TextStyle(
   color: WHITE,
 );
 
-const TextStyle h6Green = TextStyle(
-  fontSize: 15,
-  fontWeight: FontWeight.w300,
-  color: GREEN,
+//Black
+const TextStyle h3Black = TextStyle(
+  fontSize: 22,
+  fontWeight: FontWeight.w600,
+  color: BLACK,
 );
 
-const TextStyle h6Blue = TextStyle(
-  fontSize: 15,
-  fontWeight: FontWeight.w300,
-  color: BLUE2,
+const TextStyle h4Black = TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.w400,
+  color: BLACK,
+);
+
+//button
+const TextStyle h4Button = TextStyle(fontSize: 18);
+const TextStyle h4ButtonBold = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.bold,
 );

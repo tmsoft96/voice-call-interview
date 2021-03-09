@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'pages/splashScreen.dart';
+import 'pages/onboarding/splashScreen.dart';
 import 'properties/colors.dart';
 import 'properties/strings.dart';
 
